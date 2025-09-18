@@ -20,16 +20,11 @@ public class Main {
 
         // Launch GUI on Event Dispatch Thread
         SwingUtilities.invokeLater(() -> {
-            () -> 4{
-                try{
-
-                    new TodoappGUI().setVisible(true);
-                }
-                catch(Exception e){
-                    System.out.println("Error: " + e.getMessage());
-                    
-                }
+            try {
+                new TodoappGUI().setVisible(true);
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
             }
-        }
+        });
     }
 }
