@@ -76,7 +76,7 @@ public class TodoappGUI extends JFrame {
         titleField = new JTextField(20);
         descriptionArea = new JTextArea(3, 20);
         descriptionArea.setLineWrap(true);
-        descriptionArea.setWrapStyleWord(true);
+        descriptionArea.setWrapStyleWord(true);0
         completedCheckbox = new JCheckBox("Completed");
 
         // Create buttons
