@@ -6,9 +6,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TodoappDAOImpl implements TodoappDAO {
+public class TodoappDAOImpl {
 
-    @Override
     public List<Todo> getAllTodos() throws SQLException {
         List<Todo> todos = new ArrayList<>();
         String sql = "SELECT id, tittle, description, completed, created_at, updated_at FROM todos ORDER BY created_at DESC";
@@ -31,7 +30,6 @@ public class TodoappDAOImpl implements TodoappDAO {
         return todos;
     }
 
-    @Override
     public void addTodo(Todo todo) throws SQLException {
         // id, created_at and updated_at are handled by DB (auto_increment/defaults)
         String sql = "INSERT INTO todos (tittle, description, completed) VALUES (?, ?, ?)";
@@ -47,7 +45,6 @@ public class TodoappDAOImpl implements TodoappDAO {
         }
     }
 
-    @Override
     public void updateTodo(Todo todo) throws SQLException {
         String sql = "UPDATE todos SET tittle = ?, description = ?, completed = ?, updated_at = ? WHERE id = ?";
 
@@ -64,7 +61,6 @@ public class TodoappDAOImpl implements TodoappDAO {
         }
     }
 
-    @Override
     public void deleteTodo(String id) throws SQLException {
         String sql = "DELETE FROM todos WHERE id = ?";
 
